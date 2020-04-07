@@ -4,44 +4,22 @@
         <meta charset ="UTF-8 />
         <meta name="viewport" content= "width=device=width, initial-scale=1, user-scalable=yes"/>
         <link rel="stylesheet" href="./css/flexbox.css"/>
-        <title>Build Fluid </title>
+        <link rel="shortcut icon" href="./images/plane.jpeg" type="image/x-icon" />
+        <title>Flight Reservation</title>
     </head>
     <body>
-      <div class="wrapper"></div>
-        <header>
-            <nav>
-                <ul>
-                    <li><a href="./index.html">Home</a></li>
-                    <li><a href="./about.html">About</a></li>
-                </ul>
-            </nav>
-        </header>
-        <div class="content">
-            <div class="center"></div>
-                <form novalidate>
-                    <label for="username">
-                        <span>Username:</span>
-                        <input id="username" type="text" placholder="username" />    
-                    </label>
-                    <label for="password">
-                        <span>Password:</span>
-                        <input id="password" type="password" placeholder="Password" />
-                    </label>
-                    <button onclick="doLogin(event)">Login</button>
-                    <a href="./register.html" align='center'>Register</a>
-                </form>
+        <div class="wrapper">
+            <div class="bg_image">
+                <div class='fltText'>Flight Reservation System</div>
+                <div class="loginContainer">
+                    <form novalidate class="form-inline">
+                        <input type="text" placeholder="Username" name="username">
+                        <input type="text" placeholder="Password" name="psw">
+                        <button onclick="doLogin(event)">Login</button>
+                    </form>
+                </div>
             </div>
-        </div>
-      <footer>
-            <nav>
-                <ul>
-                    <li><a href="./index.html">Home</a></li>
-                    <li><a href="./about.html">About</a></li>
-                    <li>Author:<a href="mailto:mdelaurell@mac.com">Mike</a></li>
-                </ul>
-            </nav>
-        </footer>
-    </div>
+        </div>    
     </body>
    <script src="./src/app.js"></script>
    <script src="./src/auth.service.js"></script>
