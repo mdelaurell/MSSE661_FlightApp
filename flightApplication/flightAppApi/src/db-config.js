@@ -2,6 +2,7 @@ const mysql = require('mysql');
 const travelersQueries = require('./queries/travelers.queries');
 const authQueries = require('./queries/auth.queries');
 const userQueries = require('./queries/user.queries');
+const
 
 
 // Get the Host from Environment
@@ -26,18 +27,32 @@ con.connect(function(err) {
     if (err) throw err;
     console.log('Connected!');
 
+    con.query(authQueries.CREATE_USERS_TABLE, function(err, result){
+        if (err) throw err;
+        console.log('Table users created or exists already!');
+    });
+
+
     con.query(travelersQueries.CREATE_TRAVELERS_TABLE, function(err, result) {
         if (err) throw err;
         console.log('Table Traveler created or exists already!');
     });
-    con.query(travelersQueries.CREATE_ADDRESS_TABLE, function(err, result) {
+   
+    con.query(travelersQueries.CREATE_AIRLINE_TABLE, function(err, result) {
         if (err) throw err;
-        console.log('Table Address created or exists already!');
+        console.log('Table Traveler created or exists already!');
     });
-
-    con.query(authQueries.CREATE_USERS_TABLE, function(err, result){
+    con.query(travelersQueries.CREATE_AIRPORTS_TABLE, function(err, result) {
         if (err) throw err;
-        console.log('Table users created or exists already!');
+        console.log('Table Traveler created or exists already!');
+    });
+    con.query(travelersQueries.CREATE_FLIGHTS_TABLE, function(err, result) {
+        if (err) throw err;
+        console.log('Table Traveler created or exists already!');
+    });
+    con.query(travelersQueries.CREATE_RESERVATIONS_TABLE, function(err, result) {
+        if (err) throw err;
+        console.log('Table Traveler created or exists already!');
     });
     
 });
