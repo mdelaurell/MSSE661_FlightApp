@@ -1,7 +1,7 @@
 const doLogin = function(e) {
     e.preventDefault();
-    const username = document.getElementById('LoginInputUsername').value;
-    const password = document.getElementById('LoginInputPassword').value;
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
 
     login({
         username: username,

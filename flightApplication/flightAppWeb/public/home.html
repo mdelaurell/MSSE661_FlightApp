@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset ="UTF-8 />
+        <meta charset ="UTF-8" />
         <meta name="viewport" content= "width=device=width, initial-scale=1, user-scalable=yes"/>
         <link rel="shortcut icon" href="./images/plane.jpeg" type="image/x-icon" />
+        <link rel="stylesheet" href="./css/styles.css"/>
         <link 
             rel="stylesheet" 
             href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
             integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" 
             crossorigin="anonymous"
         />
-        <title>Flight Reserve</title>
+        <title>Home - Flight Reserve</title>
     </head>
     <body>
         <nav class="navbar sticky-top navbar-expand-md navbar-light bg-info">
@@ -32,7 +33,10 @@
                     Dropdown
                   </a>
                   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="./login.html">Login</a>
+                    <div>
+                      <a id="login" class="dropdown-item" href="./login.html">Login</a>
+                      <a id="logout" class="dropdown-item" href="./login.html">Logout</a>
+                    </div>
                     <a class="dropdown-item" href="./register.html">Register</a>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="https://www.visitscotland.com/">Home to Scotland</a>
@@ -40,43 +44,44 @@
                 </li>
               </ul>
             </div>
-          </nav> 
+          </nav>  
 
           <div class="container">
-            <div class="Traveler-form">
-              <form>
-                <div class="form-row">
-                  <div class="col-md-3">
-                    <label class="sr-only" for="HomeInputFirstName">Task Name</label>
-                    <input id="HomeInputFirstName" class="form-control" type="text" name="first-name" placeholder="First name"/>
-                  </div> 
+            <div class="bg_image">
+              <div class="Traveler-form">
+                <form>
                   <div class="form-row">
                     <div class="col-md-3">
-                      <label class="sr-only" for="HomeInputLastName">Last Name</label>
-                      <input id="HomeInputLastName" class="form-control" type="text" name="last-name" placeholder="Last name"/>
+                      <label class="sr-only" for="HomeInputFirstName">Task Name</label>
+                      <input id="HomeInputFirstName" class="form-control" type="text" name="first-name" placeholder="First name"/>
+                    </div> 
+                    <div class="form-row">
+                      <div class="col-md-3">
+                        <label class="sr-only" for="HomeInputLastName">Last Name</label>
+                        <input id="HomeInputLastName" class="form-control" type="text" name="last-name" placeholder="Last name"/>
+                      </div>
+                      <div class="col-md-3">
+                        <label class="sr-only" for="HomeInputEmailAddress">Email Address</label>
+                        <input id="HomeInputEmailAddress" class="form-control" type="text" name="email-address" placeholder="email address"/>
+                      </div>  
+                    <div class="col-md-3">
+                      <label class="sr-only" for="HomeSelectStatus">Status</label>
+                      <select
+                        id="HomeSelectStatus"
+                        class="custom-select mr-sm-1"
+                        name="traveler-name">
+                        <option value="0"></option>
+                        <option value="1" >Active</option>
+                        <option value="2">Inactive</option>
+                      </select>
                     </div>
                     <div class="col-md-3">
-                      <label class="sr-only" for="HomeInputEmailAddress">Email Address</label>
-                      <input id="HomeInputEmailAddress" class="form-control" type="text" name="email-address" placeholder="email address"/>
-                    </div>  
-                  <div class="col-md-3">
-                    <label class="sr-only" for="HomeSelectStatus">Status</label>
-                    <select
-                      id="HomeSelectStatus"
-                      class="custom-select mr-sm-1"
-                      name="traveler-name">
-                      <option value="0"></option>
-                      <option value="1" >Active</option>
-                      <option value="2">Inactive</option>
-                    </select>
+                      <button type="submit" class="btn btn-light" onclick="doAddTraveler(event)">ADD</button>
+                    </div>
                   </div>
-                  <div class="col-md-3">
-                    <button type="submit" class="btn btn-light" onclick="doAddTraveler(event)">ADD</button>
-                  </div>
-                </div>
-              </form>
+                </form>
+              </div>
             </div>
-      
             <div id="traveler">
               
             </div>

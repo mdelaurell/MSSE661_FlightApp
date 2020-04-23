@@ -4,13 +4,14 @@
         <meta charset ="UTF-8" />
         <meta name="viewport" content= "width=device=width, initial-scale=1, user-scalable=yes"/>
         <link rel="shortcut icon" href="./images/plane.jpeg" type="image/x-icon" />
+        <link rel="stylesheet" href="./css/styles.css"/>
         <link 
             rel="stylesheet" 
             href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
             integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" 
             crossorigin="anonymous"
         />
-        <title>Flight Reserve</title>
+        <title>Register - Flight Reserve</title>
     </head>
     <body>
         <nav class="navbar sticky-top navbar-expand-md navbar-light bg-info">
@@ -32,7 +33,10 @@
                     Dropdown
                   </a>
                   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="./login.html">Login</a>
+                    <div>
+                      <a id="login" class="dropdown-item" href="./login.html">Login</a>
+                      <a id="logout" class="dropdown-item" href="./login.html">Logout</a>
+                    </div>
                     <a class="dropdown-item" href="./register.html">Register</a>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="https://www.visitscotland.com/">Home to Scotland</a>
@@ -44,23 +48,23 @@
         
 
             <div class="container">
-                <h1>Register</h1>
-                <p>Please fill in this form to create an account.</p>
-                <hr>
-                <form registration>
-                <label for="username">
-                    <input type="text" placeholder="Enter Username" id="username" required>
-                </label>
-                <label for="password">
-                    <input type="password" placeholder="Enter Password" id="password" required>
-                </label>
-                <label for="emailAddress">
-                    <input type="text" placeholder="Enter Email Address" id="emailAddress" required>
-                </label>
+                  <h1>Register</h1>
+                  <p>Please fill in this form to create an account.</p>
+                  <hr>
+                  <form registration>
+                  <label for="username">
+                      <input type="text" placeholder="Enter Username" id="username" required>
+                  </label>
+                  <label for="password">
+                      <input type="password" placeholder="Enter Password" id="password" required>
+                  </label>
+                  <label for="emailAddress">
+                      <input type="text" placeholder="Enter Email Address" id="emailAddress" required>
+                  </label>
 
-                <button onclick="doRegister(event)">Become Active</button>
+                  <button onclick="doRegister(event)">Become Active</button>
+              </div>
             </div>
-
             <div class="container signin">
                 <p>Already have an account? <a href="index.html">Sign in</a>.</p>
             </div>

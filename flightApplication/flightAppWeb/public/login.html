@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset ="UTF-8 />
+        <meta charset ="UTF-8" />
         <meta name="viewport" content= "width=device=width, initial-scale=1, user-scalable=yes"/>
         <link rel="shortcut icon" href="./images/plane.jpeg" type="image/x-icon" />
+        <link rel="stylesheet" href="./css/styles.css"/>
         <link 
             rel="stylesheet" 
             href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
             integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" 
             crossorigin="anonymous"
         />
-        <title>Flight Reserve</title>
+        <title>Login - Flight Reserve</title>
     </head>
     <body>
         <nav class="navbar sticky-top navbar-expand-md navbar-light bg-info">
@@ -32,7 +33,10 @@
                     Dropdown
                   </a>
                   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="./login.html">Login</a>
+                    <div>
+                      <a id="login" class="dropdown-item" href="./login.html">Login</a>
+                      <a id="logout" class="dropdown-item" href="./login.html">Logout</a>
+                    </div>
                     <a class="dropdown-item" href="./register.html">Register</a>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="https://www.visitscotland.com/">Home to Scotland</a>
@@ -41,9 +45,8 @@
               </ul>
             </div>
           </nav>  
-        
 
-            <div class="container">
+            <div class="container-fluid">
                 <form>
                     <div class="form-group row">
                       <label for="LoginInputUsername" class="col-sm-2 col-form-lable">Username</label>
