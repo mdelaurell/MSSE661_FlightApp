@@ -6,7 +6,12 @@ const bodyParser = require('body-parser');
 const travelersRoutes = require('./routes/travelers.routes');
 const authRoutes = require('./routes/auth.routes');
 const userRoutes = require('./routes/user.routes');
-//const middleware = require('./middleware/errors.middleware');
+const airlineRoutes = require('./routes/airline.routes');
+const flightRoutes = require('./routes/flightmanage.routes');
+const reserveRoutes = require('./routes/reservation.routes');
+const airportRoutes = require('./routes/airport.routes');
+
+const middleware = require('./middleware/errors.middleware');
 
 const app = express();
 const port = 3000;

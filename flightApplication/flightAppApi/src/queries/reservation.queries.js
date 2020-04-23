@@ -3,9 +3,7 @@ exports.CREATE_RESERVATIONS_TABLE = 'CREATE TABLE IF NOT EXISTS \
     `userId` int(11) NOT NULL, \
     `flightId` int(11) NOT NULL, \
     `resGrpId` int(11) NOT NULL, \
-    `resReserved` tinyint(4) NOT NULL DEFAULT '1', \
-    `resPurchased` tinyint(4) NOT NULL DEFAULT '0', \
-    `resCancelled` tinyint(4) NOT NULL DEFAULT '0', \
+    `resStatus` char(1) NOT NULL DEFAULT 'R', \
     `resLastUpdated` datetime NOT NULL, \
     `resCreated` datetime NOT NULL, \
     PRIMARY KEY (`resId`), KEY `userFK_idx` (`userId`), KEY `flghtFK_idx` (`flightId`), \
@@ -15,12 +13,16 @@ exports.CREATE_RESERVATIONS_TABLE = 'CREATE TABLE IF NOT EXISTS \
 
 
 
-exports.ALL_TRAVELERS = 'SELECT * FROM reservation';
+exports.ALL_RESERVATIONS = (userId) => `SELECT * FROM reservation WHERE userId = ${userId}`;
 
-exports.SINGLE_TRAVELERS = 'SELECT * FROM reservation where resId = ?';
+exports.SINGLE_RESERVATIONS = (userId, resId) => 
+  `SELECT * FROM reservation where ${userId} AND resID = ${resId}`;
 
-exports.CREATE_TRAVELERS = 'INSERT INTO reservation (name) VALUES (?)';
+exports.CREATE_RESERVATIONS = (userId, flightID, resGrpId, resStatus, resLastUpdated) =>
+  `INSERT INTO reservation (userId, flightId, resGrpId, resStatus, resLastUpdated) VALUES (${userId}, ${flightID}, ${resGrpId}, ${resStatus}, ${resLastUpdated})`;
 
-exports.UPDATE_TRAVELERS = 'UPDATE reservation set name = ?, status = ? WHERE resId = ?';
+exports.UPDATE_RESERVATIONS = (userId, resID, newValues ) =>
+  `UPDATE reservation set ${newValues} WHERE userId = ${userId} AND resId = ${resID}`;
 
-exports.DELETE_TRAVELERS = 'DELETE FROM reservation where resId = ?';
+exports.DELETE_RESERVATIONS = (userId, resId) => 
+    `UPDATE reservation set resStatus = 'C' where userId = ${userId} AND resId = ${resId}`;
