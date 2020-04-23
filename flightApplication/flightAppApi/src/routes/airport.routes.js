@@ -11,11 +11,11 @@ const airportRoutes = express.Router();
 
 airportRoutes.get('/', controllers.getAllAirport).post('/', controllers.createAirport);
 
-// Routes for a task by id Evaluates to '/travelers/:travelersID/
+
 
 travelersRoutes
-    .get('/:taskId', controllers.getAllAirports)
-    .put('/:taskId', controllers.updateAirports)
-    .delete('/:taskId', controllers.deleteAirports);
+    .get('/:airportId', controllers.getAllAirports)
+    .put('/:airportId', controllers.updateAirports)
+    .delete('/:airportId', controllers.deleteAirports);
 
 module.exports = airportRoutes;

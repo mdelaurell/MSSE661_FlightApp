@@ -16,7 +16,7 @@ exports.CREATE_AIRPORTS_TABLE = 'CREATE TABLE IF NOT EXISTS \
 
 exports.ALL_AIRPORTS = 'SELECT * FROM airport';
 
-exports.SINGLE_AIRPORT = 'SELECT * FROM airport where airportId = ?';
+exports.SINGLE_AIRPORT_BY_NAME = 'SELECT * FROM airport where airportName like ?%';
 
 exports.CREATE_TRAVELERS = 'INSERT INTO airport (name) VALUES (?)';
 

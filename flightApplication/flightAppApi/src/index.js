@@ -10,7 +10,6 @@ const airlineRoutes = require('./routes/airline.routes');
 const flightRoutes = require('./routes/flightmanage.routes');
 const reserveRoutes = require('./routes/reservation.routes');
 const airportRoutes = require('./routes/airport.routes');
-
 const middleware = require('./middleware/errors.middleware');
 
 const app = express();
@@ -34,12 +33,16 @@ app.use(cors());
 app.use('/api/auth', authRoutes);
 app.use('/api/user', userRoutes);
 app.use('/api/travelers', travelersRoutes);
+app.use('/api/reservation', reserveRoutes);
+app.use('/api/airport', airportRoutes);
+app.use('/api/airlines', airlineRoutes);
+app.user('/api/flight', flightRoutes);
 
 // Handle 404 request
-//app.use(middleware.error404);
+app.use(middleware.error404);
 
 // Handle 500 requests.
-//app.use(middleware.error500);
+app.use(middleware.error500);
 
 
 app.use(express.static('public'));

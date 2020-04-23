@@ -14,8 +14,8 @@ airlineRoutes.get('/', controllers.getAllAirlines).post('/', controllers.createA
 // Routes for a task by id Evaluates to '/travelers/:travelersID/
 
 travelersRoutes
-    .get('/:taskId', controllers.getAllFlights)
-    .put('/:taskId', controllers.updateFlight)
-    .delete('/:taskId', controllers.deleteFlights);
+    .get('/:flight', controllers.getAllFlights)
+    .put('/:flight', controllers.updateFlight)
+    .delete('/:flight', controllers.deleteFlights);
 
 module.exports = airlineRoutes;

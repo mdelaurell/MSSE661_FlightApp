@@ -2,7 +2,10 @@ const mysql = require('mysql');
 const travelersQueries = require('./queries/travelers.queries');
 const authQueries = require('./queries/auth.queries');
 const userQueries = require('./queries/user.queries');
-const
+const airlineQueries = require('./queries/travelers.queries');
+const airportQueries = require('./queries/travelers.queries');
+const flightmanageQueries = require('./queries/travelers.queries');
+const reservationQueries = require('./queries/travelers.queries');
 
 
 // Get the Host from Environment
@@ -12,8 +15,8 @@ const
 //const database = process.env.DB_DATABASE || 'mikeDB';
 const host = 'localhost';
 const user = 'root';
-const password = 'password';
-const database = 'mikeDB';
+const password = 'M1k3s0upy';
+const database = 'flightReserve';
 
 const con = mysql.createConnection({
     host,
@@ -32,27 +35,26 @@ con.connect(function(err) {
         console.log('Table users created or exists already!');
     });
 
-
     con.query(travelersQueries.CREATE_TRAVELERS_TABLE, function(err, result) {
         if (err) throw err;
         console.log('Table Traveler created or exists already!');
     });
    
-    con.query(travelersQueries.CREATE_AIRLINE_TABLE, function(err, result) {
+    con.query(airlineQueries.CREATE_AIRLINE_TABLE, function(err, result) {
         if (err) throw err;
-        console.log('Table Traveler created or exists already!');
+        console.log('Table Airline created or exists already!');
     });
-    con.query(travelersQueries.CREATE_AIRPORTS_TABLE, function(err, result) {
+    con.query(airportQueries.CREATE_AIRPORTS_TABLE, function(err, result) {
         if (err) throw err;
-        console.log('Table Traveler created or exists already!');
+        console.log('Table Airports created or exists already!');
     });
-    con.query(travelersQueries.CREATE_FLIGHTS_TABLE, function(err, result) {
+    con.query(flightmanageQueries.CREATE_FLIGHTS_TABLE, function(err, result) {
         if (err) throw err;
-        console.log('Table Traveler created or exists already!');
+        console.log('Table Flight created or exists already!');
     });
-    con.query(travelersQueries.CREATE_RESERVATIONS_TABLE, function(err, result) {
+    con.query(reservationQueries.CREATE_RESERVATIONS_TABLE, function(err, result) {
         if (err) throw err;
-        console.log('Table Traveler created or exists already!');
+        console.log('Table Reservation created or exists already!');
     });
     
 });

@@ -1,12 +1,12 @@
 const express = require('express');
-const authController = require('../controllers/auth.controller');
-const userController = require('../controllers/user.controller');
+
+const {getMe, updateMe} = require('../controllers/user.controller');
 const verifyToken = require('../middleware/auth.middleware');
 
 const userRoutes = express.Router();
 
-userRoutes.get('/me', userController.getMe);
+userRoutes.get('/me', verifyToken, getMe);
 
-userRoutes.post('/me/update', verifyToken, authController.updateUser);
+userRoutes.post('/me/update', verifyToken, updateMe);
 
 module.exports = userRoutes;

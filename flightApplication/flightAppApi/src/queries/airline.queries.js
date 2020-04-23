@@ -15,13 +15,5 @@ exports.CREATE_AIRLINE_TABLE = 'CREATE TABLE IF NOT EXISTS \
 
 
 exports.ALL_AIRLINES = 'SELECT * FROM airlines';
-
-exports.SINGLE_AIRLINE = 'SELECT * FROM airlines where id = ?';
-
-exports.GET_AIRLINES_BY_COUNTRY = 'SELECT * FROM airlines where airlineCountry = ?';
-
-exports.CREATE_AIRLINE = 'INSERT INTO airlines (name) VALUES (?)';
-
-exports.UPDATE_AIRLINE = 'UPDATE airlines set name = ?, status = ? WHERE id = ?';
-
-exports.DELETE_AIRLINE = 'UPDATE airlines set airlineStatus = "D" WHERE airlineId = ?';
+exports.GET_AIRLINES_NAME_BY_ID = (airlineId) => `SELECT airlineName FROM airlines where airlineId = ${airlineId}`;
+exports.GET_AIRLINES_BY_NAME = (airlineName) => `SELECT airlineID, airlineName FROM airlines where airlineName = ${airlineName}`;

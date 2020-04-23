@@ -7,7 +7,7 @@ CREATE TABLE `users` (`userId` int(11) NOT NULL AUTO_INCREMENT, \
     `userLastName` varchar(50) NOT NULL, \
     `userEmailAddress` varchar(100) NOT NULL, \
     `userPhoneNumber` varchar(20) NOT NULL, \
-    `activeUser` tinyint(1) DEFAULT '1', \
+    `activeUser` tinyint(1) DEFAULT 1, \
     `created_date` datetime DEFAULT CURRENT_TIMESTAMP, \
     PRIMARY KEY (`userId`) \
     ) ENGINE=InnoDB DEFAULT CHARSET=latin1;'; 

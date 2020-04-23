@@ -11,7 +11,6 @@ const query = require('../utils/query');
 const { serverError } = require('../utils/handlers');
 
 exports.getAllTravelers = async(req,res) => {
-
     const con = await connect().catch((err) => {
         throw err;
     });
@@ -21,13 +20,12 @@ exports.getAllTravelers = async(req,res) => {
     );
 
     if (!travelers.length) {
-        res.status(4    00).json({msg: 'No travlers available for this user.'});
+        res.status(400).json({msg: 'No travlers available for this user.'});
     }
     res.json(travelers);
 };
 
 exports.getTraveler = async (req,res) => {
-
     const con = await connect().catch((err) => {
         throw err;
     });
@@ -39,7 +37,6 @@ exports.getTraveler = async (req,res) => {
     }
     res.json(travelers);
 };
-
 
 exports.createTravelers = async (req,res) => {
 
@@ -61,7 +58,6 @@ exports.createTravelers = async (req,res) => {
     res.json({ msg: 'Added task successfully!' });
 };
 
- 
 /**
  * Build up values string.
  *
