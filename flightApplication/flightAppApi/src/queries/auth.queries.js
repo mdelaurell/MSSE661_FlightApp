@@ -1,5 +1,5 @@
 exports.CREATE_USERS_TABLE = 'CREATE TABLE IF NOT EXISTS \
-CREATE TABLE `users` (`userId` int(11) NOT NULL AUTO_INCREMENT, \
+    `users` (`userId` int(11) NOT NULL AUTO_INCREMENT, \
     `userUsername` varchar(50) NOT NULL, \
     `userPassword` varchar(25) NOT NULL, \
     `userFirstName` varchar(50) NOT NULL, \
@@ -13,7 +13,7 @@ CREATE TABLE `users` (`userId` int(11) NOT NULL AUTO_INCREMENT, \
     ) ENGINE=InnoDB DEFAULT CHARSET=latin1;'; 
 
 exports.INSERT_NEW_USER = 'INSERT INTO users \
-                            (username, password, \
+                            (userUsername, userPassword, \
                              userFirstName, userMiddleName, userLastName, \
                              userEmailAddress, userPhoneNumber, activeUser) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)';
 

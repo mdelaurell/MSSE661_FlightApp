@@ -14,7 +14,7 @@ exports.getAllAirlines = async (req, res) => {
         throw err;
     });
 
-    const reservation = await query(con, ALL_FLIGHTS(), []).catch(
+    const reservation = await query(con, ALL_AIRLINES(), []).catch(
         serverError(res)
     );
 
@@ -25,12 +25,27 @@ exports.getAllAirlines = async (req, res) => {
 
 };
 
-exports.airlineNameById = async (req, res) => {
+exports.getAirlineNameById = async (req, res) => {
     const con = await connect().catch((err) => {
         throw err;
     });
 
-    const reservation = await query(con, GET_AIRLINE_NAME_BY_ID(req.params.airlineID)).catch(
+    const reservation = await query(con, GET_AIRLINES_NAME_BY_ID(req.params.airlineID)).catch(
+        serverError(res)
+    );
+
+    if (!reservation.length) {
+        res.status(400).json({ msg:  'No flights available for user.'});
+    }
+    res.json(reservation);
+};
+
+exports.getAirlineByName = async (req, res) => {
+    const con = await connect().catch((err) => {
+        throw err;
+    });
+
+    const reservation = await query(con, GET_AIRLINES_BY_NAME(req.params.airlineName)).catch(
         serverError(res)
     );
 

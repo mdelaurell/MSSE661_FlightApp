@@ -23,6 +23,6 @@ exports.CREATE_FLIGHTS_TABLE = 'CREATE TABLE IF NOT EXISTS \
 
 exports.ALL_FLIGHTS = 'SELECT * FROM flightMgr';
 
-exports.SELECTED_FLIGHTS_BY_DEPARTURE_AIRPORT_TIME = 
+exports.SELECTED_FLIGHTS_BY_DEPARTURE_AIRPORT_TIME = (departAirportId, arrivalAirportId) =>
 `SELECT * from flightMgr WHERE departAirportId = ${departAirportId} AND arrivalAirportId = ${arrivalAirportId}
 AND fltDepartTime >= DATEADD(HOUR, -2) AND fltDeaprtTime < DATEADD(HOUR, +2)`;

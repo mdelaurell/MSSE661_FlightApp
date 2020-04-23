@@ -2,10 +2,10 @@ const mysql = require('mysql');
 const travelersQueries = require('./queries/travelers.queries');
 const authQueries = require('./queries/auth.queries');
 const userQueries = require('./queries/user.queries');
-const airlineQueries = require('./queries/travelers.queries');
-const airportQueries = require('./queries/travelers.queries');
-const flightmanageQueries = require('./queries/travelers.queries');
-const reservationQueries = require('./queries/travelers.queries');
+const airlineQueries = require('./queries/airline.queries');
+const airportQueries = require('./queries/airport.queries');
+const flightmanageQueries = require('./queries/flightmanage.queries');
+const reservationQueries = require('./queries/reservation.queries');
 
 
 // Get the Host from Environment

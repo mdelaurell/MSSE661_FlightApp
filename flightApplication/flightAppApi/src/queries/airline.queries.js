@@ -1,5 +1,6 @@
-exports.CREATE_AIRLINE_TABLE = 'CREATE TABLE IF NOT EXISTS \
-`airlines` ( \
+exports.CREATE_AIRLINE_TABLE = 
+'CREATE TABLE IF NOT EXISTS \
+    `airlines` ( \
     `airlineId` int(11) NOT NULL AUTO_INCREMENT, \
     `airlineName` varchar(45) NOT NULL, \
     `airlineCode` varchar(6) NOT NULL, \
@@ -14,6 +15,6 @@ exports.CREATE_AIRLINE_TABLE = 'CREATE TABLE IF NOT EXISTS \
 
 
 
-exports.ALL_AIRLINES = 'SELECT * FROM airlines';
+exports.GET_ALL_AIRLINES = () => `SELECT * FROM airlines`;
 exports.GET_AIRLINES_NAME_BY_ID = (airlineId) => `SELECT airlineName FROM airlines where airlineId = ${airlineId}`;
 exports.GET_AIRLINES_BY_NAME = (airlineName) => `SELECT airlineID, airlineName FROM airlines where airlineName = ${airlineName}`;

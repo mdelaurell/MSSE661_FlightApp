@@ -1,7 +1,11 @@
-const controllers = require('../controllers/airline.controller');
+const {
+    getAllFlights,
+    searchFlights,
+    } = require('../controllers/flightmanage.controller');
 const express = require('express');
 
-const airlineRoutes = express.Router();
+const canAccess = require('../middleware/auth.middleware');
+const flightRoutes = express.Router();
 
 //**************************************** 
 // Express routes for Travelers
@@ -9,13 +13,13 @@ const airlineRoutes = express.Router();
 //  Routes for all Travelers
 //***************************************
 
-airlineRoutes.get('/', controllers.getAllAirlines).post('/', controllers.createAirline);
+flightRoutes.get('/', canAccess, getAllFlights)
 
 // Routes for a task by id Evaluates to '/travelers/:travelersID/
 
-travelersRoutes
-    .get('/:flight', controllers.getAllFlights)
-    .put('/:flight', controllers.updateFlight)
-    .delete('/:flight', controllers.deleteFlights);
+flightRoutes
+    .get('/:flight', getAllFlights)
+  //  .put('/:flight', updateFlight)
+    .delete('/:flight', searchFlights);
 
-module.exports = airlineRoutes;
+module.exports = flightRoutes;

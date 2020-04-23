@@ -1,8 +1,9 @@
 const mysql = require('mysql');
 const connect = require('../db-config');
 const {
-    ALL_FLIGHTS,
-    SELECTED_FLIGHTS_BY_DEPARTURE_AIRPORT_TIME,
+    GET_ALL_AIRPORTS,
+    GET_AIRPORT_BY_ID,
+    GET_AIRPORT_BY_NAME,
 } = require('../queries/airport.queries');
 const query = require('../utils/query');
 const { serverError } = require('../utils/handlers');
@@ -27,12 +28,12 @@ const _buildValuesString = (req) => {
   };
 
 
-exports.getAllFlights = async (req, res) => {
+exports.getAllAirport = async (req, res) => {
     const con = await connect().catch((err) => {
         throw err;
     });
 
-    const reservation = await query(con, ALL_FLIGHTS(), []).catch(
+    const reservation = await query(con, GET_ALL_AIRPORTS(), []).catch(
         serverError(res)
     );
 
@@ -43,12 +44,27 @@ exports.getAllFlights = async (req, res) => {
 
 };
 
-exports.serchFlights = async (req, res) => {
+exports.getAirportById = async (req, res) => {
     const con = await connect().catch((err) => {
         throw err;
     });
 
-    const reservation = await query(con, SELECTED_FLIGHTS_BY_DEPARTURE_AIRPORT_TIME(req.params.departAirportId, req.params.arrivalAirportId, fltDepartTime)).catch(
+    const reservation = await query(con, GET_AIRPORT_BY_ID(req.params.airportID)).catch(
+        serverError(res)
+    );
+
+    if (!reservation.length) {
+        res.status(400).json({ msg:  'No flights available for user.'});
+    }
+    res.json(reservation);
+};
+
+exports.getAirportByName = async (req, res) => {
+    const con = await connect().catch((err) => {
+        throw err;
+    });
+
+    const reservation = await query(con, GET_AIRPORT_BY_NAME(req.params.airportName)).catch(
         serverError(res)
     );
 

@@ -2,7 +2,7 @@ exports.CREATE_RESERVATIONS_TABLE = 'CREATE TABLE IF NOT EXISTS \
     `reservation` (`resId` int(11) NOT NULL AUTO_INCREMENT, \
     `userId` int(11) NOT NULL, \
     `flightId` int(11) NOT NULL, \
-    `resStatus` char(1) NOT NULL DEFAULT 'R', \
+    `resStatus` char(1) NOT NULL DEFAULT \'R\', \
     `resLastUpdated` datetime NOT NULL, \
     `resCreated` datetime NOT NULL, \
     PRIMARY KEY (`resId`), KEY `userFK_idx` (`userId`), KEY `flghtFK_idx` (`flightId`), \

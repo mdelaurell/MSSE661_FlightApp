@@ -43,7 +43,7 @@ exports.getAllFlights = async (req, res) => {
 
 };
 
-exports.serchFlights = async (req, res) => {
+exports.searchFlights = async (req, res) => {
     const con = await connect().catch((err) => {
         throw err;
     });

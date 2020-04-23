@@ -36,7 +36,7 @@ app.use('/api/travelers', travelersRoutes);
 app.use('/api/reservation', reserveRoutes);
 app.use('/api/airport', airportRoutes);
 app.use('/api/airlines', airlineRoutes);
-app.user('/api/flight', flightRoutes);
+app.use('/api/flight', flightRoutes);
 
 // Handle 404 request
 app.use(middleware.error404);

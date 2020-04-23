@@ -1,6 +1,6 @@
 exports.CREATE_TRAVELERS_TABLE = 
 'CREATE TABLE IF NOT EXISTS \
-CREATE TABLE `traveler` ( \
+    `traveler` ( \
     `travlerId` int(11) NOT NULL AUTO_INCREMENT, \
     `userId` int(11) NOT NULL, \
     `trvlFirstName` varchar(25) NOT NULL, \

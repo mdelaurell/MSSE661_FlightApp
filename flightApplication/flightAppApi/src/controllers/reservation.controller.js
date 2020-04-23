@@ -105,7 +105,7 @@ exports.updateReservation = async (rep, res) => {
     }
 };
 
-export.deleteReservation  = async (req, res) => {
+exports.deleteReservation  = async (req, res) => {
         // establish connection
         const con = await connect().catch((err) => {
           throw err;

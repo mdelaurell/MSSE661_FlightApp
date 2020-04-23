@@ -14,12 +14,14 @@ exports.CREATE_AIRPORTS_TABLE = 'CREATE TABLE IF NOT EXISTS \
 
 
 
-exports.ALL_AIRPORTS = 'SELECT * FROM airport';
+exports.GET_ALL_AIRPORTS = () => `SELECT * FROM airport`;
 
-exports.SINGLE_AIRPORT_BY_NAME = 'SELECT * FROM airport where airportName like ?%';
+exports.GET_AIRPORT_BY_ID = (airportId) => `SELECT * FROM airport where airportId like ${airportId}`;
 
-exports.CREATE_TRAVELERS = 'INSERT INTO airport (name) VALUES (?)';
+exports.GET_AIRPORT_BY_NAME = (airportName) => `SELECT * FROM airport where airportName like ${airportName}`;
 
-exports.UPDATE_TRAVELERS = 'UPDATE airport set name = ?, status = ? WHERE id = ?';
+/*xports.CREATE_AIRPORT = 'INSERT INTO airport (name) VALUES (?)';
 
-exports.DELETE_TRAVELERS = 'DELETE FROM airport where id = ?';
+exports.UPDATE_AIRPORT = 'UPDATE airport set name = ?, status = ? WHERE id = ?';
+
+exports.DELETE_AIRPORT = 'DELETE FROM airport where id = ?';*/
