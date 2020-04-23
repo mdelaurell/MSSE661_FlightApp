@@ -1,5 +1,5 @@
 {
-    "name": "week4",
+    "name": "flightapp",
     "version": "1.0.4",
     "description": "User our Api with the server",
     "main": "index.js",
